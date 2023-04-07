@@ -176,7 +176,7 @@ html {
   align-items: center;
   min-width: 100%;
   height: 140px;
-  background: rgba(255, 107, 0, 0.1);
+  background: rgba(255, 123, 0, 0.5);
   padding: 0 120px;
 }
 
@@ -421,8 +421,124 @@ html {
   background-size: cover;
 }
 
-.footer {
+.content-movie {
+  margin-top: 15px;
+  margin-bottom: 160px;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-movie div:first-child {
+  margin-right: 40px;
+}
+
+.wrapper-movie {
+  position: relative;
+  z-index: 1;
+  height: 1565px;
+}
+
+.bg-movie {
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  height: 1565px;
+  background-color: rgba(47, 0, 149, 0.8);
+}
+
+.genres {
+  max-width: 410px;
+  max-height: 532px;
+  margin: 0 0 0 20px;
+  background-color: rgba(221, 0, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.genre-block {
+  border: 1px solid #993700;
+  width: 410px;
+  height: 76px;
+  background-color: rgba(206, 84, 0, 0.67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.genre-elem {
+  color: #ffffff;
+  font-family: "Zen Dots";
+  font-size: 30px;
+}
+
+.icon_movie {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.52);
+  margin-left: 20px;
+}
+
+.content__movie_genre {
+  padding-top: 10px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 1618px;
+  height: 1146px;
+}
+
+.show_movie {
+  display: flex;
+  background-color: rgba(174, 0, 237, 0.8);
+  width: 1300px;
+  height: 1120px;
+}
+
+.back__to_genres {
+  background-color: #cd07d1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 215px;
+  height: 65px;
+}
+
+.back {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Zen Dots";
+  width: 109px;
+  height: 36px;
+  margin-right: 20px;
+}
+
+.film {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 345px;
+  height: 450px;
+  border: #000000 solid 1px;
+}
+
+.film__image {
+  width: 280px;
+  height: 370px;
+}
+
+.film__title {
+  color: #ffffff;
+  font-family: "Zen Dots";
+  font-size: 10px;
+}
+
+/* .footer {
+  position: absolute;
+  bottom: 0;
   background-color: #000000;
   height: 200px;
   min-width: 100%;
-}
+} */

@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper-movie">
+  <div class="bg-movie"></div>
+  <div class="header">
+    <a href="/" class="header__logo">
+      <div class="logo__img">
+        <h5 class="logo__text">RETRO FEVER</h5>
+      </div>
+    </a>
+    <div class="header__acount">
+      <div class="btns__acount">
+        <a href="" class="entry">sign in</a>
+        <a href="" class="register">sign up</a>
+      </div>
+      <a href="" class="acount__icon"></a>
+    </div>
+  </div>
+  <div class="content-movie">
+    <div class="genres">
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Horror') }}"
+          >Horror</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Drama') }}"
+          >Drama</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Comedy') }}"
+          >Comedy</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Fiction') }}"
+          >Fiction</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Action') }}"
+          >Action</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Thriller') }}"
+          >Thriller</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+      <div class="genre-block">
+        <a class="genre-elem" href="{{ url_for('genre', name='Detective') }}"
+          >Detective</a
+        >
+        <div class="icon_movie"></div>
+      </div>
+    </div>
+  </div>
+  <!-- <footer class="footer">
+    <div class="footer__body"></div>
+  </footer> -->
+</div>
+{% endblock %}
