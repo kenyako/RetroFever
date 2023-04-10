@@ -37,9 +37,34 @@ def genre():
     for film in films:
         list_films.append(dict(title=film.title, image=film.image))
 
-    print(list_films)
-
     return render_template('genre.html', list_films=list_films)
+
+
+@app.route('/movie_info')
+def movie_info():
+
+    cur_title = request.args.get('film_name')
+
+    db_sess = db_session.create_session()
+    cur_movie = db_sess.query(Films).filter(Films.title == cur_title).first()
+
+    cur_genre = db_sess.query(GenreFilm).filter(
+        GenreFilm.id == cur_movie.genre).first().title
+
+    movie_params = {
+        'title': cur_title,
+        'image': cur_movie.image,
+        'genre': cur_genre,
+        'director': cur_movie.director,
+        'production': cur_movie.production,
+        'premiere': cur_movie.premiere,
+        'year': cur_movie.premiere.split(', ')[1],
+        'budget': cur_movie.budget,
+        'duration': f'{int(cur_movie.duration) // 60}h {int(cur_movie.duration) % 60}m',
+        'about': cur_movie.info,
+    }
+
+    return render_template('movie_info.html', movie_params=movie_params)
 
 
 if __name__ == '__main__':

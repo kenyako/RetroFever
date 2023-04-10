@@ -20,12 +20,20 @@
       <div class="back">BACK</div>
     </a>
     <div class="show_movie">
-      {% for film in list_films %}
-      <div class="film">
-        <img class="film__image" src="/static{{ film['image'] }}" alt="" />
-        <p class="film__title">{{ film['title'] }}</p>
+      <div class="films__block">
+        {% for film in list_films %}
+        <a href="{{ url_for('movie_info', film_name=film['title']) }}">
+          <div class="film">
+            <img
+              class="film__image"
+              src="{{ url_for('static', filename=film['image']) }}"
+              alt=""
+            />
+            <p class="film__title">{{ film['title'] }}</p>
+          </div>
+        </a>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
   <!-- <footer class="footer">
