@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper__music">
+  <div class="bg-categories"></div>
+  <div class="header">
+    <a href="/" class="header__logo">
+      <div class="logo__img">
+        <h5 class="logo__text">RETRO FEVER</h5>
+      </div>
+    </a>
+    <div class="header__acount">
+      <div class="btns__acount">
+        <a href="" class="entry">sign in</a>
+        <a href="" class="register">sign up</a>
+      </div>
+      <a href="" class="acount__icon"></a>
+    </div>
+  </div>
+  <div class="music__wrapper">
+    <a href="{{ url_for('music', period=70) }}" class="music__70 music_link"
+      >Hits of the 70s</a
+    >
+    <a href="{{ url_for('music', period=80) }}" class="music__80 music_link"
+      >Hits of the 80s</a
+    >
+    <a href="{{ url_for('music', period=90) }}" class="music__90 music_link"
+      >Hits of the 90s</a
+    >
+  </div>
+  <div class="music__list_wrapper">
+    {% for music in music_params %}
+    <div class="music__block">
+      <audio
+        class="music__player"
+        src="/static/{{ music['path'] }}"
+        controls
+      ></audio>
+      <p class="track__name">{{ music['track_name'] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
-<div class="wrapper-movie">
-  <div class="bg-movie"></div>
+<div class="wrapper__movie">
+  <div class="bg-categories"></div>
   <div class="header">
     <a href="/" class="header__logo">
       <div class="logo__img">
@@ -15,50 +15,29 @@
       <a href="" class="acount__icon"></a>
     </div>
   </div>
-  <div class="content-movie">
+  <div class="wrapper__genres">
     <div class="genres">
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Horror') }}"
-          >Horror</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Drama') }}"
-          >Drama</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Comedy') }}"
-          >Comedy</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Fiction') }}"
-          >Fiction</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Action') }}"
-          >Action</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Thriller') }}"
-          >Thriller</a
-        >
-        <div class="icon_movie"></div>
-      </div>
-      <div class="genre-block">
-        <a class="genre-elem" href="{{ url_for('genre', name='Detective') }}"
-          >Detective</a
-        >
-        <div class="icon_movie"></div>
-      </div>
+      <a class="genre__link" href="{{ url_for('genre', name='Horror') }}"
+        >Horror</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Drama') }}"
+        >Drama</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Comedy') }}"
+        >Comedy</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Fiction') }}"
+        >Fiction</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Action') }}"
+        >Action</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Thriller') }}"
+        >Thriller</a
+      >
+      <a class="genre__link" href="{{ url_for('genre', name='Detective') }}"
+        >Detective</a
+      >
     </div>
   </div>
   <!-- <footer class="footer">
