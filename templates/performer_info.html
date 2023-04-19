@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper__perf_info">
+  <div class="bg-categories"></div>
+  <div class="header">
+    <a href="/" class="header__logo">
+      <div class="logo__img">
+        <h5 class="logo__text">RETRO FEVER</h5>
+      </div>
+    </a>
+    <div class="header__acount">
+      <div class="btns__acount">
+        {% if current_user.is_authenticated %}
+        <a href="/logout" class="current__user">{{ current_user.name }}</a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="entry">sign in</a>
+        <a href="{{ url_for('register') }}" class="register">sign up</a>
+        {% endif %}
+      </div>
+      <a href="" class="acount__icon"></a>
+    </div>
+  </div>
+  <div class="perf__info_wrapper">
+    <div class="perf__info_elems">
+      <div class="criterions__elems">
+        <div class="perf__elem">
+          <img
+            class="perf__image"
+            src="{{ url_for('static', filename=perf_params['image']) }}"
+            alt=""
+          />
+        </div>
+        <div class="perf__elem critetions__elems">
+          <p class="perf__name elem__criterion">{{ perf_params['name'] }}</p>
+          <div class="perf__info_genres elem__criterion">
+            <p class="perf__genres_criterion">Genres</p>
+            <p class="perf__genres">{{ perf_params['genres'] }}</p>
+          </div>
+          <div class="perf__info_activity elem__criterion">
+            <p class="perf__activity_criterion">Years Activity</p>
+            <p class="perf__activity">{{ perf_params['activity'] }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="perf__info_about">
+        <p class="perf__about">{{ perf_params['about'] }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper__movie_info">
+  <div class="bg-categories"></div>
+  <div class="header">
+    <a href="/" class="header__logo">
+      <div class="logo__img">
+        <h5 class="logo__text">RETRO FEVER</h5>
+      </div>
+    </a>
+    <div class="header__acount">
+      <div class="btns__acount">
+        {% if current_user.is_authenticated %}
+        <a href="/logout" class="current__user">{{ current_user.name }}</a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="entry">sign in</a>
+        <a href="{{ url_for('register') }}" class="register">sign up</a>
+        {% endif %}
+      </div>
+      <a href="" class="acount__icon"></a>
+    </div>
+  </div>
+  <div class="info__wrapper">
+    <div class="movie__block">
+      <div class="bg__block">
+        <img
+          class="movie__poster"
+          src="{{ url_for('static', filename=movie_params['image']) }}"
+          alt=""
+        />
+      </div>
+      <div class="info__block">
+        <div class="title">
+          <h1 class="movie__title">
+            {{ movie_params['title'] }} (movie, {{ movie_params['year'] }})
+          </h1>
+          <p class="movie__duration">{{ movie_params['duration'] }}</p>
+        </div>
+        <div class="info__list">
+          <div class="info_elem">
+            <p class="movie__genre criterion__name">genre</p>
+            <p class="name__genre criterion__info">
+              {{ movie_params['genre'] }}
+            </p>
+          </div>
+          <div class="info_elem">
+            <p class="movie__premiere criterion__name">premiere</p>
+            <p class="name__premiere criterion__info">
+              {{ movie_params['premiere'] }}
+            </p>
+          </div>
+          <div class="info_elem">
+            <p class="movie__director criterion__name">director</p>
+            <p class="name__director criterion__info">
+              {{ movie_params['director'] }}
+            </p>
+          </div>
+          <div class="info_elem">
+            <p class="movie__budget criterion__name">budget</p>
+            <p class="name__budget criterion__info">
+              ${{ movie_params['budget'] }} million
+            </p>
+          </div>
+          <div class="info_elem">
+            <p class="movie__production criterion__name">production</p>
+            <p class="name__production criterion__info">
+              {{ movie_params['production'] }}
+            </p>
+          </div>
+          {% if movie_params['name_author'] %}
+          <div class="block__author">
+            <p class="name__author">
+              <span class="added">Added by:</span> {{
+              movie_params['name_author'] }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+        <div class="info_about">
+          <p class="movie__about">{{ movie_params['about'] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

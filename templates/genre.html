@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrapper-movie">
+  <div class="bg-categories"></div>
+  <div class="header">
+    <a href="/" class="header__logo">
+      <div class="logo__img">
+        <h5 class="logo__text">RETRO FEVER</h5>
+      </div>
+    </a>
+    <div class="header__acount">
+      <div class="btns__acount">
+        {% if current_user.is_authenticated %}
+        <a href="/logout" class="current__user">{{ current_user.name }}</a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="entry">sign in</a>
+        <a href="{{ url_for('register') }}" class="register">sign up</a>
+        {% endif %}
+      </div>
+      <a href="" class="acount__icon"></a>
+    </div>
+  </div>
+  <div class="content__movie_genre">
+    <div>
+      <a class="back__to_genres" href="/movie">
+        <div class="back__text"><p>BACK</p></div>
+      </a>
+      {% if current_user.is_authenticated %}
+      <a class="add__object" href="{{ url_for('add_movie') }}">
+        <div class="add__text"><p>ADD</p></div>
+        <div class="add__symbol"><p>+</p></div>
+      </a>
+      {% endif %}
+    </div>
+    <div class="show_movie">
+      <div class="films__block">
+        {% for film in list_films %}
+        <a href="{{ url_for('movie_info', film_name=film['title']) }}">
+          <div class="film">
+            <img
+              class="film__image"
+              src="{{ url_for('static', filename=film['image']) }}"
+              alt=""
+            />
+            <p class="film__title">{{ film['title'] }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- <footer class="footer">
+    <div class="footer__body"></div>
+  </footer> -->
+</div>
+{% endblock %}

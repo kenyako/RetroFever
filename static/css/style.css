@@ -1,0 +1,914 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p,
+h1 {
+  font-family: "Zen Dots";
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.upper {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #5b105c 36.17%,
+    #7a3548 68.78%,
+    #f27c0e 99.95%
+  );
+  display: flex;
+  padding: 20px 0;
+}
+
+.upper__body {
+  /* width: 100%; */
+  flex: 1 1 auto;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+
+.upper__logo {
+  background-color: #ffffff;
+  border-radius: 100%;
+  height: 520px;
+  width: 520px;
+}
+
+.upper__title {
+  font-family: "Zen Dots";
+  line-height: 220px;
+  width: 830px;
+  height: 400px;
+  color: #ffffff;
+  font-size: 170px;
+  text-shadow: -0 -1px 0 #000000, 0 -1px 0 #000000, -0 1px 0 #000000,
+    0 1px 0 #000000, -1px -0 0 #000000, 1px -0 0 #000000, -1px 0 0 #000000,
+    1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000, 1px 1px 0 #000000;
+}
+
+.upper__slogan {
+  font-family: "Zen Dots";
+  color: #ffffff;
+  height: 50px;
+  width: 550px;
+  color: #cccccc;
+  font-size: 40px;
+  margin: 30px 0 0 10px;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-width: 100%;
+  height: 1700px;
+  background: linear-gradient(
+    180deg,
+    #f67f10 34.02%,
+    #f37c0f 34.03%,
+    #de467e 80.23%
+  );
+}
+
+.bg_img {
+  position: absolute;
+  z-index: -1;
+  height: 1700px;
+  min-width: 100%;
+  background-image: url("../img/background/main_bg.jpg");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+  height: 140px;
+  background: rgba(255, 123, 0, 0.5);
+  padding: 0 120px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 88px;
+}
+
+.logo__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  width: 88px;
+  height: 88px;
+}
+
+.logo__text {
+  font-family: "Zen Dots";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 200px;
+  height: 53px;
+  font-size: 20px;
+  background: linear-gradient(
+    100.52deg,
+    rgba(255, 0, 199, 0.932292) 37.33%,
+    rgba(88, 93, 255, 0.987309) 56.28%,
+    #db00ff 70.41%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header__acount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 309px;
+  height: 82px;
+}
+
+.btns__acount {
+  display: flex;
+  flex-direction: row;
+  width: 216px;
+  height: 32px;
+}
+
+.entry,
+.register {
+  font-family: "Zen Dots";
+  font-size: 23px;
+  color: #ff1fe9;
+}
+
+.current__user {
+  font-family: "Zen Dots";
+  color: #ff1fe9;
+  font-size: 23px;
+  align-self: center;
+  margin: 0 auto 0 auto;
+}
+
+.current__user:hover {
+  color: #df1ccb;
+}
+
+.entry {
+  border-right: 3px solid #ff1fe9;
+  height: 25px;
+  padding-right: 8px;
+}
+
+.register {
+  padding-left: 8px;
+}
+
+.register__content {
+  height: 500px;
+}
+
+.authorization__content {
+  height: 350px;
+}
+
+.register__content,
+.authorization__content {
+  width: 800px;
+  margin: 60px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+  -moz-box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+  box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+}
+
+.register__title,
+.authorization__title {
+  animation: neon-text 5s steps(1, start) infinite reverse;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  align-self: center;
+}
+
+@keyframes neon-text {
+  0% {
+    color: #450b60;
+    text-shadow: 0 0 7px #450b60, 0 0 8px #450b60;
+  }
+  80% {
+    color: #f9d7fc;
+    text-shadow: 0 0 6px #ff76ff, 0 0 10px #ff76ff, 0 0 50px #ff00ff;
+  }
+  81% {
+    color: #fc97ff;
+    text-shadow: 0 0 6px #ff76ff, 0 0 10px #ff76ff, 0 0 50px #ff00ff;
+  }
+  82% {
+    color: #450b60;
+    text-shadow: 0 0 7px #450b60, 0 0 8px #450b60;
+  }
+  83% {
+    color: #fc97ff;
+    text-shadow: 0 0 6px #ff76ff, 0 0 10px #ff76ff, 0 0 50px #ff00ff;
+  }
+  84% {
+    color: #450b60;
+    text-shadow: 0 0 7px #450b60, 0 0 8px #450b60;
+  }
+  85% {
+    color: #fc97ff;
+    text-shadow: 0 0 6px #ff76ff, 0 0 10px #ff76ff, 0 0 50px #ff00ff;
+  }
+  100% {
+    color: #450b60;
+    text-shadow: 0 0 7px #450b60, 0 0 8px #450b60;
+  }
+}
+
+.entry:hover,
+.register:hover {
+  color: #c01cb0;
+}
+
+.acount__icon {
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  width: 82px;
+  height: 82px;
+}
+
+.categories {
+  margin: 80px auto 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 913px;
+  height: 1311px;
+}
+
+.categories__list {
+  margin-top: 97px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.block__title {
+  margin: 0 auto;
+  width: 445px;
+  height: 77px;
+}
+
+.title__categories {
+  font-family: "Zen Dots";
+  font-size: 64px;
+  color: #cb007a;
+}
+
+.categorie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.elem__categories {
+  margin-bottom: 150px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 34.41px 33px;
+  width: 370px;
+  height: 275px;
+  border-radius: 40px;
+  font-family: "Zen Dots";
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.movie {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/movie.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.music {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/music.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.clothes {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/clothes.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.performers {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/performers.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.games {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/games.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.comics {
+  background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.8) 17.16%,
+      rgba(0, 0, 0, 0.8) 17.17%,
+      rgba(0, 0, 0, 0) 44.4%,
+      rgba(255, 255, 255, 0) 44.4%
+    ),
+    url("../img/categories/comics.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.wrapper__movie {
+  position: relative;
+  z-index: 1;
+  height: 1600px;
+}
+
+.bg-categories {
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  height: 1600px;
+  background-color: rgba(47, 0, 149, 0.8);
+}
+
+.wrapper__genres {
+  margin: 0 auto 0 auto;
+  width: 1100px;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(219, 0, 255, 0.7);
+}
+
+.genres {
+  margin-top: 40px;
+  width: 1040px;
+  height: 840px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-flow: row;
+  grid-column-gap: 40px;
+  grid-row-gap: 80px;
+}
+
+.genre__link {
+  border: 1px solid #993700;
+  width: 500px;
+  height: 150px;
+  background-color: rgba(206, 84, 0, 0.67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Zen Dots";
+  font-size: 45px;
+}
+
+.content__movie_genre {
+  padding-top: 10px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 1618px;
+  height: 1146px;
+}
+
+.show_movie {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(174, 0, 237, 0.8);
+  width: 1300px;
+  height: 1120px;
+  overflow-y: scroll;
+}
+
+.films__block {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
+}
+
+.back__to_genres {
+  background-color: #cd07d1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 215px;
+  height: 65px;
+}
+
+.back__text {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Zen Dots";
+  width: 109px;
+  height: 36px;
+  margin-right: 20px;
+}
+
+.add__object {
+  margin-top: 55px;
+  background-color: #8f00ff;
+  border-radius: 5px;
+  width: 200px;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add__text {
+  width: 85px;
+  height: 35px;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Zen Dots";
+}
+
+.add__symbol {
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.add__content {
+  -webkit-box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+  -moz-box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+  box-shadow: 0px 0px 60px 40px rgba(172, 0, 225, 0.4);
+  width: 900px;
+  height: 900px;
+  margin: 60px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.add__form {
+  margin-top: 20px;
+}
+
+.film {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  height: 450px;
+}
+
+.film__image {
+  width: 254px;
+  height: 394px;
+  box-shadow: 0px 25px 20px 40px rgba(149, 54, 0, 0.4);
+}
+
+.film__title {
+  color: #ffffff;
+  font-family: "Zen Dots";
+  font-size: 25px;
+  text-align: center;
+}
+
+.info__wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(142, 0, 193, 0.8);
+  margin: 0 auto 0 auto;
+  width: 1300px;
+  height: 1120px;
+}
+
+.movie__block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.block__author {
+  width: 190px;
+  height: 30px;
+  font-family: "Zen Dots";
+  font-size: 20px;
+  color: #ffa046;
+}
+
+.added {
+  color: #ff7b00;
+}
+
+.bg__block {
+  z-index: 0;
+  position: relative;
+  width: 1250px;
+  height: 360px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.info__block {
+  align-self: flex-end;
+  width: 910px;
+  height: 560px;
+  background-color: rgba(49, 0, 155, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.movie__poster {
+  margin-left: 4%;
+  margin-top: 13%;
+  width: 353px;
+  height: 529px;
+  position: absolute;
+  z-index: 1;
+}
+
+.title {
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie__title {
+  font-size: 40px;
+  font-family: "Zen Dots";
+  color: #ffffff;
+}
+
+.movie__duration {
+  font-size: 20px;
+  font-family: "Zen Dots";
+  color: #bdbdbd;
+  padding-left: 30px;
+}
+
+.info__list {
+  font-family: "Zen Dots";
+  font-size: 15px;
+  margin-top: 50px;
+  margin-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-row-gap: 50px;
+}
+
+.criterion__name {
+  color: #bdbdbd;
+}
+
+.criterion__info {
+  color: #ffffff;
+}
+
+.info_elem {
+  /* border: #000000 solid 1px; */
+  width: 270px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info_about {
+  width: 880px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.2);
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.movie__about {
+  margin: 10px 15px 10px 15px;
+  font-size: 20px;
+  color: #fc7eff;
+  font-family: "Zen Dots";
+  text-align: justify;
+}
+
+.wrapper__performers {
+  height: 1025px;
+}
+
+.performers__wrapper {
+  background-color: rgba(219, 0, 255, 0.7);
+  width: 1500px;
+  height: 1300px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.performers__block {
+  width: 1450px;
+  height: 1200px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-column-gap: 75px;
+  grid-row-gap: 75px;
+  justify-items: center;
+}
+
+.performer {
+  width: 300px;
+  height: 330px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.performer__image {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.performer__name {
+  font-size: 25px;
+  font-family: "Zen Dots";
+  color: #ffffff;
+  text-align: center;
+}
+
+.perf__info_wrapper {
+  width: 1430px;
+  height: 900px;
+  background-color: rgba(143, 0, 193, 0.8);
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.perf__info_elems {
+  margin-top: 50px;
+  width: 1230px;
+  height: 760px;
+  display: flex;
+  flex-direction: column;
+}
+
+.criterions__elems {
+  display: flex;
+  flex-direction: row;
+}
+
+.perf__image {
+  object-fit: cover;
+  width: 390px;
+  height: 390px;
+  border-radius: 15px;
+}
+
+.critetions__elems {
+  margin-left: 40px;
+}
+
+.elem__criterion {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Zen Dots";
+  margin-bottom: 75px;
+}
+
+.perf__name {
+  font-size: 40px;
+  font-family: "Zen Dots";
+  color: #ffffff;
+  margin-left: 60px;
+}
+
+.perf__genres_criterion,
+.perf__activity_criterion {
+  color: #bdbdbd;
+}
+
+.perf__info_about {
+  width: 1200px;
+  height: 330px;
+  font-family: "Zen Dots";
+  font-size: 25px;
+  color: #ffc7f9;
+  align-self: center;
+  text-align: justify;
+  margin-top: 25px;
+}
+
+.music__wrapper {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(143, 0, 193, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.music_link {
+  width: 500px;
+  height: 100px;
+  background-color: rgba(255, 122, 0, 0.7);
+  font-family: "Zen Dots";
+  font-size: 25px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music__list_wrapper {
+  margin: 0 auto 0 auto;
+  width: 1000px;
+  height: 1300px;
+  background-color: rgba(219, 0, 255, 0.7);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music__block {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Zen Dots";
+  color: #ffffff;
+  width: 950px;
+  height: 70px;
+  background-color: rgba(82, 0, 186, 0.6);
+}
+
+.music__player {
+  justify-self: flex-start;
+  width: 400px;
+}
+
+.track__name {
+  margin-left: 30px;
+}
