@@ -24,7 +24,10 @@ login_manager.init_app(app)
 
 
 def main():
+
+    # Инициализация базы данных со всей нужной информацией
     db_session.global_init('db/info.sqlite')
+    # ----------------------------------------------------
     app.run()
 
 
@@ -42,14 +45,19 @@ def movie():
 def genre():
     db_sess = db_session.create_session()
 
+    # Текущее название жанра
     cur_genre = request.args.get('name')
+
+    # Индекс жанра для получения фильмов из таблицы со всеми фильмами
     index_genre = db_sess.query(GenreFilm).filter(
         GenreFilm.title == cur_genre).first().id
 
+    # Получение фильмов
     films = db_sess.query(Films).filter(Films.genre == index_genre)
 
     list_films = []
 
+    # Запись нужных данных о фильмах в список со словарями
     for film in films:
         list_films.append(dict(title=film.title, image=film.image))
 
@@ -71,6 +79,7 @@ def add_movie():
 
         db_sess = db_session.create_session()
 
+        # Создание нового объекта для занесения в базу
         film = Films(
             title=form.title.data,
             info=form.about.data,
@@ -100,10 +109,15 @@ def movie_info():
     cur_title = request.args.get('film_name')
 
     db_sess = db_session.create_session()
+
+    # Получение выбранного фильма
     cur_movie = db_sess.query(Films).filter(Films.title == cur_title).first()
+
+    # Получение названия жанра
     cur_genre = db_sess.query(GenreFilm).filter(
         GenreFilm.id == cur_movie.genre).first().title
 
+    # Получение id пользователя, добавившего фильм (если он есть)
     author_id = db_sess.query(Films).filter(
         Films.title == cur_title).first().user_id
 
@@ -112,6 +126,7 @@ def movie_info():
             User.id == author_id).first().name
     else:
         name_author = None
+    # ------------------------------------------------------------
 
     movie_params = {
         'title': cur_title,
@@ -132,6 +147,7 @@ def movie_info():
 
 @app.route('/performers')
 def performers():
+
     db_sess = db_session.create_session()
 
     perf_cover = []
@@ -145,12 +161,15 @@ def performers():
 
 @app.route('/performer_info')
 def performer_info():
+
     db_sess = db_session.create_session()
 
     cur_name = request.args.get('name')
 
+    # Получение выбранного исполнителя
     cur_performer = db_sess.query(Performers).filter(
         Performers.name == cur_name).first()
+    # --------------------------------
 
     perf_params = {
         'name': cur_performer.name,
@@ -165,15 +184,21 @@ def performer_info():
 
 @app.route('/music')
 def music():
+
     db_sess = db_session.create_session()
+
+    # Получение выбранного периода
     cur_period = request.args.get('period')
 
     music_params = []
 
+    # Если пользователь выбрал период, то показываются песни данного времени,
+    # а если нет, то показываются все имеющиеся песни
     if cur_period:
         music_list = db_sess.query(Music).filter(Music.period == cur_period)
     else:
         music_list = db_sess.query(Music).all()
+    # -----------------------------------------------------------------------
 
     for music in music_list:
         music_params.append(dict(track_name=music.track_name, path=music.path))
@@ -183,6 +208,7 @@ def music():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+
     form = RegisterForm()
 
     if form.validate_on_submit():
@@ -211,6 +237,7 @@ def register():
 
 @login_manager.user_loader
 def load_user(user_id):
+
     db_sess = db_session.create_session()
 
     return db_sess.query(User).get(user_id)
@@ -218,15 +245,18 @@ def load_user(user_id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
     form = LoginForm()
 
     if form.validate_on_submit():
 
         db_sess = db_session.create_session()
+
         user = db_sess.query(User).filter(
             User.email == form.email.data).first()
 
         if user and user.check_password(form.password.data):
+            
             login_user(user, remember=form.remember_me.data)
             return redirect('/')
 
@@ -238,6 +268,7 @@ def login():
 @app.route('/logout')
 @login_required
 def logout():
+
     logout_user()
 
     return redirect('/')
