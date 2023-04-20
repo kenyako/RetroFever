@@ -197,6 +197,12 @@ h1 {
   height: 88px;
 }
 
+/* .mini__logo {
+  opacity: 0.8;
+  width: 88px;
+  height: 88px;
+} */
+
 .logo__text {
   font-family: "Zen Dots";
   display: flex;
@@ -212,9 +218,9 @@ h1 {
     rgba(88, 93, 255, 0.987309) 56.28%,
     #db00ff 70.41%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .header__acount {
